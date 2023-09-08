@@ -212,8 +212,6 @@
 
   Is async                 : Yes
 
-  Is imported by           : lib/unbuild.js
-
 
 
 ## lib/fun.js
@@ -973,18 +971,6 @@
   Wrapped plugin imports   : gun
 
   Is async                 : No
-
-
-
-## lib/unbuild.js
-
-  Wrapped global accessors : __dirname, debug x3, process
-
-  Wrapped plugin imports   : fsrm
-
-  Upgraded node imports    : fs, path
-
-  Is async                 : Yes
 
 
 
@@ -2022,13 +2008,13 @@
 
   Wrapped global overrides : $ x27, as, debug x5, JOY, meta x4, n2 x3, opt x2, pAdd, port, process x3, sAdd, soul, t2
 
-  Wrapped global accessors : __dirname x10, $ x151, AWS_SDK_NOT_INSTALLED, Buffer x4, cb, debug x148, document x25, echo, fetch x3, file, FileReader, fun x3, global x2, gun x11, Gun x8, Image, indexedDB x2, JOY x2, localStorage x2, meta x16, n2 x6, need, Node, obj_map, opt x4, port x4, process x45, Range, require x4, requireScriptPromises x3, setImmediate x4, soul x2, t2 x3, Tone x11, window x5
+  Wrapped global accessors : __dirname x9, $ x151, AWS_SDK_NOT_INSTALLED, Buffer x4, cb, debug x145, document x25, echo, fetch x3, file, FileReader, fun x3, global x2, gun x11, Gun x8, Image, indexedDB x2, JOY x2, localStorage x2, meta x16, n2 x6, need, Node, obj_map, opt x4, port x4, process x44, Range, require x4, requireScriptPromises x3, setImmediate x4, soul x2, t2 x3, Tone x11, window x5
 
   Ignored global accessors : clearTimeout x13, location x7, setInterval x8, setTimeout x74, TextDecoder x4, TextEncoder x4
 
-  Wrapped plugin imports   : axe, bye, email, fsrm, gun x49, http, index x2, jsonp, lib/axe, meta/metaCore, meta/metaEvents, meta/metaUI, multicast, open x3, radisk x2, radix x3, radix2, radmigtmp, rfs x2, rfsmix, rs3, sea x2, serve, src/type, stats, store, wire, ws, yson x3
+  Wrapped plugin imports   : axe, bye, email, gun x49, http, index x2, jsonp, lib/axe, meta/metaCore, meta/metaEvents, meta/metaUI, multicast, open x3, radisk x2, radix x3, radix2, radmigtmp, rfs x2, rfsmix, rs3, sea x2, serve, src/type, stats, store, wire, ws, yson x3
 
-  Upgraded node imports    : buffer, child_process x2, dgram, events, fs x14, http, https, os x10, path x6, url x6, v8 x2
+  Upgraded node imports    : buffer, child_process x2, dgram, events, fs x13, http, https, os x10, path x5, url x6, v8 x2
 
   Upgraded npm imports     : aws-sdk x2, chokidar, emailjs, formidable, gun, uws, ws x4
 
@@ -2038,9 +2024,9 @@
 
   Wrapped builtin accessors: JSON.parseAsync, JSON.stringifyAsync x2, Math.random x10, Object.empty, Object.Map x12, Object.maps x2, setTimeout.Book x2, setTimeout.each x6, setTimeout.RAD.has, setTimeout.RAD x4, setTimeout.turn x2, setTimeout.window x2, String.random x2
 
-  Is async                 : No x60, Yes x27
+  Is async                 : No x60, Yes x26
 
-  Is imported by           : axe.js, lib/crashed.js, lib/hub.js, lib/later.js, lib/list.js, lib/load.js, lib/match.js, lib/meta.js x3, lib/radisk.js x3, lib/radisk2.js, lib/radmigtmp.js, lib/rfsmix.js, lib/rs3.js x2, lib/server.js x9, lib/shim.js x2, lib/stats.js, lib/store.js, lib/super.js, lib/unbuild.js, lib/wsp.js x3
+  Is imported by           : axe.js, lib/crashed.js, lib/hub.js, lib/later.js, lib/list.js, lib/load.js, lib/match.js, lib/meta.js x3, lib/radisk.js x3, lib/radisk2.js, lib/radmigtmp.js, lib/rfsmix.js, lib/rs3.js x2, lib/server.js x9, lib/shim.js x2, lib/stats.js, lib/store.js, lib/super.js, lib/wsp.js x3
 
 
 
@@ -2056,13 +2042,13 @@
 
   Wrapped global overrides : $ x27, as, debug x6, JOY, meta x4, n2 x3, opt x2, pAdd, port, process x3, sAdd, soul, t2
 
-  Wrapped global accessors : __dirname x10, $ x151, authRecall, AWS_SDK_NOT_INSTALLED, Buffer x4, cb, debug x233, document x27, echo, fetch x3, file, FileReader, fun x3, global x2, gun x11, Gun x19, GUN x2, Image, indexedDB x2, JOY x2, localStorage x2, meta x16, n2 x6, need, Node, obj_map, opt x4, path, port x4, process x45, Range, require x4, requireScriptPromises x3, setImmediate x6, sha1hash, soul x2, t2 x3, theirPubkey, Tone x11, window x5
+  Wrapped global accessors : __dirname x9, $ x151, authRecall, AWS_SDK_NOT_INSTALLED, Buffer x4, cb, debug x230, document x27, echo, fetch x3, file, FileReader, fun x3, global x2, gun x11, Gun x19, GUN x2, Image, indexedDB x2, JOY x2, localStorage x2, meta x16, n2 x6, need, Node, obj_map, opt x4, path, port x4, process x44, Range, require x4, requireScriptPromises x3, setImmediate x6, sha1hash, soul x2, t2 x3, theirPubkey, Tone x11, window x5
 
   Ignored global accessors : atob, btoa x2, clearTimeout x19, location x11, MessageChannel x2, performance x2, setInterval x8, setTimeout x116, TextDecoder x8, TextEncoder x11
 
-  Wrapped plugin imports   : aeskey x2, array, ask, axe, back, base64 x2, buffer x2, bye, certify, chain, decrypt, dup, email, encrypt, fsrm, get, gun x52, http, index x6, jsonp, lib/axe, lib/text_encoding, mesh, meta/metaCore, meta/metaEvents, meta/metaUI, multicast, onto x2, open x3, put, radisk x2, radix x3, radix2, radmigtmp, rfs x2, rfsmix, root x17, rs3, sea x4, sea/aeskey, sea/array, sea/auth, sea/base64, sea/buffer, sea/certify, sea/create, sea/decrypt, sea/encrypt, sea/https, sea/index, sea/pair, sea/recall, sea/root, sea/sea, sea/secret, sea/settings, sea/sha1, sea/sha256, sea/share, sea/shim, sea/sign, sea/then, sea/user, sea/verify, sea/work, serve, settings x9, sha256 x4, shim x16, sign, src/ask, src/back, src/chain, src/dup, src/get, src/index, src/localStorage, src/map, src/mesh, src/on, src/onto, src/put, src/root, src/set, src/shim, src/state, src/type, src/valid, src/websocket, state, stats, store, user x4, valid, verify, wire, work, ws, yson x3
+  Wrapped plugin imports   : aeskey x2, array, ask, axe, back, base64 x2, buffer x2, bye, certify, chain, decrypt, dup, email, encrypt, get, gun x52, http, index x6, jsonp, lib/axe, lib/text_encoding, mesh, meta/metaCore, meta/metaEvents, meta/metaUI, multicast, onto x2, open x3, put, radisk x2, radix x3, radix2, radmigtmp, rfs x2, rfsmix, root x17, rs3, sea x4, sea/aeskey, sea/array, sea/auth, sea/base64, sea/buffer, sea/certify, sea/create, sea/decrypt, sea/encrypt, sea/https, sea/index, sea/pair, sea/recall, sea/root, sea/sea, sea/secret, sea/settings, sea/sha1, sea/sha256, sea/share, sea/shim, sea/sign, sea/then, sea/user, sea/verify, sea/work, serve, settings x9, sha256 x4, shim x16, sign, src/ask, src/back, src/chain, src/dup, src/get, src/index, src/localStorage, src/map, src/mesh, src/on, src/onto, src/put, src/root, src/set, src/shim, src/state, src/type, src/valid, src/websocket, state, stats, store, user x4, valid, verify, wire, work, ws, yson x3
 
-  Upgraded node imports    : buffer, child_process x2, dgram, events, fs x14, http, https, os x10, path x6, url x6, v8 x2
+  Upgraded node imports    : buffer, child_process x2, dgram, events, fs x13, http, https, os x10, path x5, url x6, v8 x2
 
   Upgraded npm imports     : aws-sdk x2, chokidar, emailjs, formidable, gun, uws, ws x4
 
@@ -2072,7 +2058,7 @@
 
   Wrapped builtin accessors: JSON.parseAsync x6, JSON.stringifyAsync x8, Math.random x15, Object.empty x3, Object.Map x12, Object.maps x2, Object.plain x10, setTimeout.Book x2, setTimeout.check, setTimeout.each x20, setTimeout.hold x2, setTimeout.poll x2, setTimeout.RAD.has, setTimeout.RAD x4, setTimeout.turn x9, setTimeout.window x2, String.hash x2, String.match x8, String.random x14
 
-  Is async                 : No x106, Yes x27
+  Is async                 : No x106, Yes x26
 
-  Is imported by           : axe.js x2, gun.js x18, lib/aws.js, lib/axe.js, lib/bye.js, lib/crashed.js, lib/debug.js, lib/erase.js, lib/evict.js, lib/file.js, lib/forget.js, lib/fork.js, lib/http.js, lib/hub.js, lib/jsonp.js, lib/later.js x2, lib/les.js, lib/level.js, lib/lex.js, lib/list.js x2, lib/load.js x2, lib/match.js, lib/memdisk.js, lib/meta.js x3, lib/mix.js, lib/multicast.js, lib/not.js, lib/open.js, lib/path.js, lib/promise.js, lib/radisk.js x4, lib/radisk2.js x2, lib/radix2.js, lib/radmigtmp.js, lib/rfs.js, lib/rfsmix.js, lib/rindexed.js, lib/rls.js, lib/role.js x2, lib/rs3.js x3, lib/server.js x11, lib/shim.js x3, lib/space.js, lib/stats.js x2, lib/store.js x2, lib/super.js x2, lib/then.js, lib/time.js, lib/unbuild.js, lib/unset.js, lib/uws.js, lib/verify.js, lib/webrtc.js, lib/wire.js, lib/ws.js, lib/wsp.js x4, nts.js, sea.js x25, sea/aeskey.js x3, sea/auth.js, sea/buffer.js, sea/certify.js, sea/create.js, sea/decrypt.js x4, sea/encrypt.js x4, sea/https.js, sea/index.js x3, sea/pair.js x3, sea/recall.js, sea/sea.js x9, sea/secret.js x3, sea/settings.js x2, sea/sha1.js, sea/sha256.js, sea/share.js, sea/shim.js x2, sea/sign.js x4, sea/then.js, sea/user.js x2, sea/verify.js x4, sea/work.js x4, src/ask.js, src/back.js, src/chain.js, src/dup.js, src/get.js, src/index.js x5, src/map.js, src/mesh.js, src/on.js, src/put.js, src/root.js x6, src/set.js, src/state.js, src/websocket.js x2
+  Is imported by           : axe.js x2, gun.js x18, lib/aws.js, lib/axe.js, lib/bye.js, lib/crashed.js, lib/debug.js, lib/erase.js, lib/evict.js, lib/file.js, lib/forget.js, lib/fork.js, lib/http.js, lib/hub.js, lib/jsonp.js, lib/later.js x2, lib/les.js, lib/level.js, lib/lex.js, lib/list.js x2, lib/load.js x2, lib/match.js, lib/memdisk.js, lib/meta.js x3, lib/mix.js, lib/multicast.js, lib/not.js, lib/open.js, lib/path.js, lib/promise.js, lib/radisk.js x4, lib/radisk2.js x2, lib/radix2.js, lib/radmigtmp.js, lib/rfs.js, lib/rfsmix.js, lib/rindexed.js, lib/rls.js, lib/role.js x2, lib/rs3.js x3, lib/server.js x11, lib/shim.js x3, lib/space.js, lib/stats.js x2, lib/store.js x2, lib/super.js x2, lib/then.js, lib/time.js, lib/unset.js, lib/uws.js, lib/verify.js, lib/webrtc.js, lib/wire.js, lib/ws.js, lib/wsp.js x4, nts.js, sea.js x25, sea/aeskey.js x3, sea/auth.js, sea/buffer.js, sea/certify.js, sea/create.js, sea/decrypt.js x4, sea/encrypt.js x4, sea/https.js, sea/index.js x3, sea/pair.js x3, sea/recall.js, sea/sea.js x9, sea/secret.js x3, sea/settings.js x2, sea/sha1.js, sea/sha256.js, sea/share.js, sea/shim.js x2, sea/sign.js x4, sea/then.js, sea/user.js x2, sea/verify.js x4, sea/work.js x4, src/ask.js, src/back.js, src/chain.js, src/dup.js, src/get.js, src/index.js x5, src/map.js, src/mesh.js, src/on.js, src/put.js, src/root.js x6, src/set.js, src/state.js, src/websocket.js x2
 

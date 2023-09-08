@@ -7,5 +7,6 @@ fs.copy("gunSource/gun.js", "gun.js");
 fs.copy("gunSource/nts.js", "nts.js");
 fs.copy("gunSource/sea.js", "sea.js");
 fs.copy("gunSource/lib",	"lib");
+fs.remove("gunSource/lib/unbuild.js");
 fs.copy("gunSource/index.d.ts",	"index.d.ts");
 fs.copy("gunSource/types",	"types");
