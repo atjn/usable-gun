@@ -56,11 +56,34 @@ const nodePackages = ["fs", "os", "v8", "path", "url", "crypto", "events", "proc
  * Con: It is very hard to transform all code TODO
  */
 const externalImportStrategy = [
-	["lib/aws.js", "static"],
-	["lib/email.js", "async"],
-	["lib/file.js", "static"],
-	["lib/serve.js", "static"]
-]
+	["lib/aws.js",			"static"],
+	["lib/crashed.js",		"dynamic"],
+	["lib/email.js",		"dynamic"],
+	["lib/evict.js",		"static"],
+	["lib/file.js",			"static"],
+	["lib/fsrm.js",			"static"],
+	["lib/http.js",			"static"],
+	["lib/hub.js",			"static"],
+	["lib/les.js",			"dynamic"],
+	["lib/level.js",		"dynamic"],
+	["lib/memdisk.js",		"static"],
+	["lib/mobile.js",		"static"],
+	["lib/multicast.js",	"static"],
+	["lib/radisk3.js",		"dynamic"],
+	["lib/reboot.js",		"static"],
+	["lib/rfs.js",			"static"],
+	["lib/rs3.js",			"static"],
+	["lib/stats.js",		"static"],
+	["lib/uws.js",			"static"],
+	["lib/verify.js",		"static"],
+	["lib/wire.js",			"static"],
+	["lib/ws.js",			"static"],
+	["lib/wsp.js",			"static"],
+	["lib/serve.js",		"static"],
+].map(entry => {
+	entry[0] = new Link(entry[0]);
+	return entry;
+});
 
 const wrapperCode = (await fs.readFile((new Link("rebuild/wrapper/wrapper.js", baseDir)).absolutePath)).toString();
 
@@ -549,21 +572,32 @@ function upgradeRequires({ types: t }){
 								const wrapperLink = new Link("usableLib/wsWrapper.js");
 								importPath = pathRelative(pathJoin(filename, ".."), wrapperLink.absolutePath);
 							}
-							path.replaceWith(
-								t.MemberExpression(
-									t.AwaitExpression(
-										t.CallExpression(
-											t.Import(),
-											[
-												t.StringLiteral(importPath),
-											],
+							const strategy = externalImportStrategy.find(candidate => candidate[0].absolutePath === (new Link(filename)).absolutePath);
+							if(!strategy) throw new Error(`No import strategy defined for file ${filename}`);
+							
+							if(strategy[1] === "dynamic"){
+								path.replaceWith(
+									t.MemberExpression(
+										t.AwaitExpression(
+											t.CallExpression(
+												t.Import(),
+												[
+													t.StringLiteral(importPath),
+												],
+											),
 										),
+										t.Identifier("default"),
 									),
-									t.Identifier("default"),
-								),
-							);
-							makePathAsync(path, t);
-							fileIsAsync.set(filename, true);
+								);
+								makePathAsync(path, t);
+								fileIsAsync.set(filename, true);
+							}else if(strategy[1] === "static"){
+								const importLocalName = `__import_${importName.replaceAll("-", "_").replaceAll(":", "_")}`;
+								path.replaceWith(
+									t.Identifier(importLocalName),
+								);
+								addNpmImport(filename, importPath, importLocalName);
+							}
 							return;
 						}
 
@@ -595,6 +629,23 @@ function addFileImport(filename, importPath, expressionName){
 	if(!fileIsImportedBy.has(absoluteImportPath)) fileIsImportedBy.set(absoluteImportPath, new Set());
 	const importedSet = fileIsImportedBy.get(absoluteImportPath);
 	importedSet.add(filename);
+
+}
+/**
+ *
+ * @param filename
+ * @param importPath
+ * @param expressionName
+ */
+function addNpmImport(filename, importPath, expressionName){
+
+	if(!fileNeedsImports.has(filename)) fileNeedsImports.set(filename, new Map());
+	const importMap = fileNeedsImports.get(filename);
+	if(!importMap.has(importPath)){
+		importMap.set(importPath, {
+			name: expressionName,
+		});
+	}
 
 }
 /**
@@ -859,7 +910,7 @@ function wrapGlobalOverrides({ types: t }){
 				baseObjectScope.unshift(baseObject.node.name);
 				const scopeString = baseObjectScope.join("|");
 				const name = baseObject.node.name;
-				if(!baseObject.isIdentifier() || name.startsWith("__usable_") || name.endsWith("Plugin") || builtins.includes(name) || path.scope.hasBinding(name)) return;
+				if(!baseObject.isIdentifier() || name.startsWith("__usable_") || name.startsWith("__import_") || name.endsWith("Plugin") || builtins.includes(name) || path.scope.hasBinding(name)) return;
 				/**
 				 * Gun should let the developer decide when their application wants to update its URL.
 				 * We remove all instances that set anything on location.
@@ -894,7 +945,7 @@ function wrapGlobalAccessors({ types: t }){
 			Identifier(path, { filename }){
 				const fileTop = topIndex.get(filename);
 				const name = path.node.name;
-				if(name.startsWith("__usable_") || name.endsWith("Plugin") || path.node.loc?.start?.line <= fileTop || path.scope.hasBinding(name)){
+				if(name.startsWith("__usable_") || name.startsWith("__import_") || name.endsWith("Plugin") || path.node.loc?.start?.line <= fileTop || path.scope.hasBinding(name)){
 					return;
 				}
 				if(safeGlobalEntries.includes(name)){

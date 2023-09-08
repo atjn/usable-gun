@@ -18,7 +18,7 @@
 
   Upgraded npm imports     : aws-sdk
 
-  Is async                 : Yes
+  Is async                 : No
 
 
 
@@ -162,7 +162,7 @@
 
   Wrapped builtin accessors: setTimeout.each
 
-  Is async                 : Yes
+  Is async                 : No
 
 
 
@@ -176,7 +176,7 @@
 
   Upgraded node imports    : fs, path
 
-  Is async                 : Yes
+  Is async                 : No
 
 
 
@@ -210,7 +210,7 @@
 
   Upgraded node imports    : fs, path
 
-  Is async                 : Yes
+  Is async                 : No
 
 
 
@@ -248,7 +248,7 @@
 
   Upgraded npm imports     : formidable
 
-  Is async                 : Yes
+  Is async                 : No
 
   Is imported by           : lib/wsp.js
 
@@ -266,7 +266,7 @@
 
   Upgraded npm imports     : chokidar
 
-  Is async                 : Yes
+  Is async                 : No
 
 
 
@@ -406,7 +406,7 @@
 
   Upgraded node imports    : fs, path
 
-  Is async                 : Yes
+  Is async                 : No
 
 
 
@@ -484,7 +484,7 @@
 
   Upgraded node imports    : buffer
 
-  Is async                 : Yes
+  Is async                 : No
 
 
 
@@ -518,7 +518,7 @@
 
   Wrapped builtin accessors: Math.random x2
 
-  Is async                 : Yes
+  Is async                 : No
 
   Is imported by           : lib/server.js
 
@@ -720,7 +720,7 @@
 
   Upgraded node imports    : child_process
 
-  Is async                 : Yes
+  Is async                 : No
 
 
 
@@ -738,7 +738,7 @@
 
   Wrapped builtin accessors: Math.random
 
-  Is async                 : Yes
+  Is async                 : No
 
   Is imported by           : lib/rfsmix.js, lib/server.js
 
@@ -750,7 +750,7 @@
 
   Wrapped plugin imports   : rfs
 
-  Is async                 : Yes
+  Is async                 : No
 
   Is imported by           : lib/rs3.js
 
@@ -824,7 +824,7 @@
 
   Upgraded npm imports     : aws-sdk
 
-  Is async                 : Yes
+  Is async                 : No
 
   Is imported by           : lib/server.js
 
@@ -838,7 +838,7 @@
 
   Upgraded node imports    : fs x2, path
 
-  Is async                 : Yes
+  Is async                 : No
 
   Is imported by           : lib/server.js
 
@@ -852,7 +852,7 @@
 
   Wrapped plugin imports   : axe, gun, multicast, rfs, rs3, sea, serve, stats, store, wire, yson
 
-  Is async                 : Yes
+  Is async                 : No
 
 
 
@@ -896,7 +896,7 @@
 
   Wrapped builtin accessors: JSON.stringifyAsync
 
-  Is async                 : Yes
+  Is async                 : No
 
   Is imported by           : lib/server.js
 
@@ -1034,7 +1034,7 @@
 
   Upgraded npm imports     : uws
 
-  Is async                 : Yes
+  Is async                 : No
 
 
 
@@ -1046,7 +1046,7 @@
 
   Upgraded node imports    : url
 
-  Is async                 : Yes
+  Is async                 : No
 
 
 
@@ -1088,7 +1088,7 @@
 
   Upgraded npm imports     : ws
 
-  Is async                 : Yes
+  Is async                 : No
 
   Is imported by           : lib/server.js
 
@@ -1104,7 +1104,7 @@
 
   Upgraded npm imports     : ws
 
-  Is async                 : Yes
+  Is async                 : No
 
   Is imported by           : lib/wsp.js
 
@@ -1122,7 +1122,7 @@
 
   Upgraded npm imports     : ws x2
 
-  Is async                 : Yes
+  Is async                 : No
 
 
 
@@ -2024,7 +2024,7 @@
 
   Wrapped builtin accessors: JSON.parseAsync, JSON.stringifyAsync x2, Math.random x10, Object.empty, Object.Map x12, Object.maps x2, setTimeout.Book x2, setTimeout.each x6, setTimeout.RAD.has, setTimeout.RAD x4, setTimeout.turn x2, setTimeout.window x2, String.random x2
 
-  Is async                 : No x60, Yes x26
+  Is async                 : No x81, Yes x5
 
   Is imported by           : axe.js, lib/crashed.js, lib/hub.js, lib/later.js, lib/list.js, lib/load.js, lib/match.js, lib/meta.js x3, lib/radisk.js x3, lib/radisk2.js, lib/radmigtmp.js, lib/rfsmix.js, lib/rs3.js x2, lib/server.js x9, lib/shim.js x2, lib/stats.js, lib/store.js, lib/super.js, lib/wsp.js x3
 
@@ -2058,7 +2058,7 @@
 
   Wrapped builtin accessors: JSON.parseAsync x6, JSON.stringifyAsync x8, Math.random x15, Object.empty x3, Object.Map x12, Object.maps x2, Object.plain x10, setTimeout.Book x2, setTimeout.check, setTimeout.each x20, setTimeout.hold x2, setTimeout.poll x2, setTimeout.RAD.has, setTimeout.RAD x4, setTimeout.turn x9, setTimeout.window x2, String.hash x2, String.match x8, String.random x14
 
-  Is async                 : No x106, Yes x26
+  Is async                 : No x127, Yes x5
 
   Is imported by           : axe.js x2, gun.js x18, lib/aws.js, lib/axe.js, lib/bye.js, lib/crashed.js, lib/debug.js, lib/erase.js, lib/evict.js, lib/file.js, lib/forget.js, lib/fork.js, lib/http.js, lib/hub.js, lib/jsonp.js, lib/later.js x2, lib/les.js, lib/level.js, lib/lex.js, lib/list.js x2, lib/load.js x2, lib/match.js, lib/memdisk.js, lib/meta.js x3, lib/mix.js, lib/multicast.js, lib/not.js, lib/open.js, lib/path.js, lib/promise.js, lib/radisk.js x4, lib/radisk2.js x2, lib/radix2.js, lib/radmigtmp.js, lib/rfs.js, lib/rfsmix.js, lib/rindexed.js, lib/rls.js, lib/role.js x2, lib/rs3.js x3, lib/server.js x11, lib/shim.js x3, lib/space.js, lib/stats.js x2, lib/store.js x2, lib/super.js x2, lib/then.js, lib/time.js, lib/unset.js, lib/uws.js, lib/verify.js, lib/webrtc.js, lib/wire.js, lib/ws.js, lib/wsp.js x4, nts.js, sea.js x25, sea/aeskey.js x3, sea/auth.js, sea/buffer.js, sea/certify.js, sea/create.js, sea/decrypt.js x4, sea/encrypt.js x4, sea/https.js, sea/index.js x3, sea/pair.js x3, sea/recall.js, sea/sea.js x9, sea/secret.js x3, sea/settings.js x2, sea/sha1.js, sea/sha256.js, sea/share.js, sea/shim.js x2, sea/sign.js x4, sea/then.js, sea/user.js x2, sea/verify.js x4, sea/work.js x4, src/ask.js, src/back.js, src/chain.js, src/dup.js, src/get.js, src/index.js x5, src/map.js, src/mesh.js, src/on.js, src/put.js, src/root.js x6, src/set.js, src/state.js, src/websocket.js x2
 
