@@ -27,7 +27,7 @@ const builtins = ["Object", "Function", "Boolean", "Symbol", "Number", "BigInt",
  * - Gun does not try to mutate them, it only accesses them
  * - It is available in all js environments, so there would be no desire to polyfill them for gun.
  */
-const safeGlobalEntries = ["location", "performance", "MessageChannel", "clearTimeout", "btoa", "atob", "setTimeout", "setInterval", "TextEncoder", "TextDecoder"];
+const safeGlobalEntries = ["document", "location", "performance", "MessageChannel", "clearTimeout", "btoa", "atob", "setTimeout", "setInterval", "TextEncoder", "TextDecoder"];
 
 /**
  * When wrapping global entries, they will by default be proxied to `globalThis`.

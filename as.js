@@ -255,7 +255,7 @@ export default function (__usable_environment) {
 				? li
 				: sort(num, li.prev());
 		};
-		__usable_globalThis.$(__usable_window.document).on(
+		__usable_globalThis.$(document).on(
 			"keyup",
 			"input, textarea, [contenteditable]",
 			as.wait(function () {
@@ -275,16 +275,14 @@ export default function (__usable_environment) {
 		__usable_globalThis.$.as = as;
 	})();
 	(() => {
-		__usable_globalThis
-			.$(__usable_window.document)
-			.on("click", "a, button", function (e) {
-				var tmp = __usable_globalThis.$(this).attr("href") || "";
-				if (0 === tmp.indexOf("http")) {
-					return;
-				}
-				e.preventDefault();
-				r(tmp);
-			});
+		__usable_globalThis.$(document).on("click", "a, button", function (e) {
+			var tmp = __usable_globalThis.$(this).attr("href") || "";
+			if (0 === tmp.indexOf("http")) {
+				return;
+			}
+			e.preventDefault();
+			r(tmp);
+		});
 		function r(href) {
 			if (!href) {
 				return;
@@ -351,7 +349,7 @@ export default function (__usable_environment) {
 				__usable_globalThis.JOY.start ||
 				(() => {
 					__usable_globalThis.$.as(
-						__usable_window.document,
+						document,
 						__usable_globalThis.gun,
 						null,
 						__usable_globalThis.JOY.opt,

@@ -116,7 +116,9 @@
 
   Wrapped global overrides : $ x21
 
-  Wrapped global accessors : $ x18, document x2
+  Wrapped global accessors : $ x18
+
+  Ignored global accessors : document x2
 
   Is async                 : No
 
@@ -218,9 +220,9 @@
 
   Wrapped globals          : window
 
-  Wrapped global accessors : $ x4, document, fun x3, window x2
+  Wrapped global accessors : $ x4, fun x3, window x2
 
-  Ignored global accessors : setTimeout x2
+  Ignored global accessors : document, setTimeout x2
 
   Wrapped builtin accessors: Math.random x3
 
@@ -230,7 +232,9 @@
 
 ## lib/hot.js
 
-  Wrapped global accessors : $ x7, document x5, meta
+  Wrapped global accessors : $ x7, meta
+
+  Ignored global accessors : document x5
 
   Is async                 : No
 
@@ -418,9 +422,9 @@
 
   Wrapped global overrides : $, meta
 
-  Wrapped global accessors : $ x19, document x2, meta x7
+  Wrapped global accessors : $ x19, meta x7
 
-  Ignored global accessors : setTimeout
+  Ignored global accessors : document x2, setTimeout
 
   Is async                 : No
 
@@ -432,7 +436,9 @@
 
   Wrapped globals          : window
 
-  Wrapped global accessors : $ x7, document x4, meta x2
+  Wrapped global accessors : $ x7, meta x2
+
+  Ignored global accessors : document x4
 
   Is async                 : No
 
@@ -444,9 +450,9 @@
 
   Wrapped global overrides : meta x3
 
-  Wrapped global accessors : $ x12, document x2, meta x6
+  Wrapped global accessors : $ x12, meta x6
 
-  Ignored global accessors : setTimeout
+  Ignored global accessors : document x2, setTimeout
 
   Is async                 : No
 
@@ -494,7 +500,9 @@
 
   Wrapped globals          : window x2
 
-  Wrapped global accessors : $ x33, document, Node, Range
+  Wrapped global accessors : $ x33, Node, Range
+
+  Ignored global accessors : document x5
 
   Is async                 : No
 
@@ -1000,7 +1008,9 @@
 
   Wrapped global overrides : $
 
-  Wrapped global accessors : $ x3, document, file, FileReader, Image
+  Wrapped global accessors : $ x3, file, FileReader, Image
+
+  Ignored global accessors : document
 
   Is async                 : No
 
@@ -1052,9 +1062,9 @@
 
 ## lib/wave.js
 
-  Wrapped global accessors : debug x2, document x4, global x2, requireScriptPromises x3, Tone x11, window
+  Wrapped global accessors : debug x2, global x2, requireScriptPromises x3, Tone x11, window
 
-  Ignored global accessors : clearTimeout, setTimeout x5
+  Ignored global accessors : clearTimeout, document x4, setTimeout x5
 
   Wrapped builtin accessors: Math.random
 
@@ -1826,9 +1836,7 @@
 
   Expanded names           : undefined
 
-  Wrapped global accessors : document x2
-
-  Ignored global accessors : clearTimeout, setTimeout x3
+  Ignored global accessors : clearTimeout, document x2, setTimeout x3
 
   Wrapped plugin imports   : index, mesh
 
@@ -1848,9 +1856,9 @@
 
   Wrapped global overrides : $ x3, as, JOY
 
-  Wrapped global accessors : $ x30, debug x5, document x3, Gun, gun x4, JOY x2
+  Wrapped global accessors : $ x30, debug x5, Gun, gun x4, JOY x2
 
-  Ignored global accessors : clearTimeout, location x2, setTimeout
+  Ignored global accessors : clearTimeout, document x3, location x2, setTimeout
 
   Is async                 : No
 
@@ -1952,9 +1960,9 @@
 
   Wrapped global overrides : debug
 
-  Wrapped global accessors : debug x47, document x2, Gun x11, setImmediate x2
+  Wrapped global accessors : debug x47, Gun x11, setImmediate x2
 
-  Ignored global accessors : clearTimeout x6, MessageChannel x2, performance x2, setTimeout x41
+  Ignored global accessors : clearTimeout x6, document x2, MessageChannel x2, performance x2, setTimeout x41
 
   Wrapped plugin imports   : ask, back, chain, dup, get, index x4, mesh, onto x2, put, root x5, shim x4, src/ask, src/back, src/chain, src/dup, src/get, src/index, src/localStorage, src/map, src/mesh, src/on, src/onto, src/put, src/root, src/set, src/shim, src/state, src/valid, src/websocket, state, valid
 
@@ -2008,9 +2016,9 @@
 
   Wrapped global overrides : $ x27, as, debug x5, JOY, meta x4, n2 x3, opt x2, pAdd, port, process x3, sAdd, soul, t2
 
-  Wrapped global accessors : __dirname x9, $ x151, AWS_SDK_NOT_INSTALLED, Buffer x4, cb, debug x145, document x25, echo, fetch x3, file, FileReader, fun x3, global x2, gun x11, Gun x8, Image, indexedDB x2, JOY x2, localStorage x2, meta x16, n2 x6, need, Node, obj_map, opt x4, port x4, process x44, Range, require x4, requireScriptPromises x3, setImmediate x4, soul x2, t2 x3, Tone x11, window x5
+  Wrapped global accessors : __dirname x9, $ x151, AWS_SDK_NOT_INSTALLED, Buffer x4, cb, debug x145, echo, fetch x3, file, FileReader, fun x3, global x2, gun x11, Gun x8, Image, indexedDB x2, JOY x2, localStorage x2, meta x16, n2 x6, need, Node, obj_map, opt x4, port x4, process x44, Range, require x4, requireScriptPromises x3, setImmediate x4, soul x2, t2 x3, Tone x11, window x5
 
-  Ignored global accessors : clearTimeout x13, location x7, setInterval x8, setTimeout x74, TextDecoder x4, TextEncoder x4
+  Ignored global accessors : clearTimeout x13, document x29, location x7, setInterval x8, setTimeout x74, TextDecoder x4, TextEncoder x4
 
   Wrapped plugin imports   : axe, bye, email, gun x49, http, index x2, jsonp, lib/axe, meta/metaCore, meta/metaEvents, meta/metaUI, multicast, open x3, radisk x2, radix x3, radix2, radmigtmp, rfs x2, rfsmix, rs3, sea x2, serve, src/type, stats, store, wire, ws, yson x3
 
@@ -2042,9 +2050,9 @@
 
   Wrapped global overrides : $ x27, as, debug x6, JOY, meta x4, n2 x3, opt x2, pAdd, port, process x3, sAdd, soul, t2
 
-  Wrapped global accessors : __dirname x9, $ x151, authRecall, AWS_SDK_NOT_INSTALLED, Buffer x4, cb, debug x230, document x27, echo, fetch x3, file, FileReader, fun x3, global x2, gun x11, Gun x19, GUN x2, Image, indexedDB x2, JOY x2, localStorage x2, meta x16, n2 x6, need, Node, obj_map, opt x4, path, port x4, process x44, Range, require x4, requireScriptPromises x3, setImmediate x6, sha1hash, soul x2, t2 x3, theirPubkey, Tone x11, window x5
+  Wrapped global accessors : __dirname x9, $ x151, authRecall, AWS_SDK_NOT_INSTALLED, Buffer x4, cb, debug x230, echo, fetch x3, file, FileReader, fun x3, global x2, gun x11, Gun x19, GUN x2, Image, indexedDB x2, JOY x2, localStorage x2, meta x16, n2 x6, need, Node, obj_map, opt x4, path, port x4, process x44, Range, require x4, requireScriptPromises x3, setImmediate x6, sha1hash, soul x2, t2 x3, theirPubkey, Tone x11, window x5
 
-  Ignored global accessors : atob, btoa x2, clearTimeout x19, location x11, MessageChannel x2, performance x2, setInterval x8, setTimeout x116, TextDecoder x8, TextEncoder x11
+  Ignored global accessors : atob, btoa x2, clearTimeout x19, document x31, location x11, MessageChannel x2, performance x2, setInterval x8, setTimeout x116, TextDecoder x8, TextEncoder x11
 
   Wrapped plugin imports   : aeskey x2, array, ask, axe, back, base64 x2, buffer x2, bye, certify, chain, decrypt, dup, email, encrypt, get, gun x52, http, index x6, jsonp, lib/axe, lib/text_encoding, mesh, meta/metaCore, meta/metaEvents, meta/metaUI, multicast, onto x2, open x3, put, radisk x2, radix x3, radix2, radmigtmp, rfs x2, rfsmix, root x17, rs3, sea x4, sea/aeskey, sea/array, sea/auth, sea/base64, sea/buffer, sea/certify, sea/create, sea/decrypt, sea/encrypt, sea/https, sea/index, sea/pair, sea/recall, sea/root, sea/sea, sea/secret, sea/settings, sea/sha1, sea/sha256, sea/share, sea/shim, sea/sign, sea/then, sea/user, sea/verify, sea/work, serve, settings x9, sha256 x4, shim x16, sign, src/ask, src/back, src/chain, src/dup, src/get, src/index, src/localStorage, src/map, src/mesh, src/on, src/onto, src/put, src/root, src/set, src/shim, src/state, src/type, src/valid, src/websocket, state, stats, store, user x4, valid, verify, wire, work, ws, yson x3
 
