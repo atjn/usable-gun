@@ -1,0 +1,8 @@
+.DS_Store
+node_modules
+/radata
+/gunSource
+*.tgz
+.env
+.env.*
+!.env.example
