@@ -25,6 +25,8 @@ export default function (__usable_environment) {
 			},
 		},
 	);
+	//TODO: implement require and dirname
+
 	/* BEGIN WRAPPED GUN CODE */ // request / response module, for asking and acking messages.
 	mathRandomPlugin(__usable_environment);
 	ontoPlugin(__usable_environment); // depends upon onto!

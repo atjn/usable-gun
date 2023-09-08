@@ -4,8 +4,8 @@ export default function (__usable_environment) {
 	if (__usable_isActivated) return;
 	__usable_isActivated = true;
 
+	//TODO: implement require and dirname
 	/* BEGIN WRAPPED GUN CODE */
-
 	var User = userPlugin(__usable_environment);
 
 	var SEA = User.SEA;

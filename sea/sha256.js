@@ -4,8 +4,8 @@ const __usable_module = {};
 export default function (__usable_environment) {
 	if (__usable_isActivated) return __usable_module.exports;
 	__usable_isActivated = true;
+	//TODO: implement require and dirname
 	/* BEGIN WRAPPED GUN CODE */
-
 	var shim = shimPlugin(__usable_environment);
 	__usable_module.exports = async (d, o) => {
 		var t = typeof d == "string" ? d : await shim.stringify(d);

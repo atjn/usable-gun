@@ -22,8 +22,8 @@ export default function (__usable_environment) {
 			},
 		},
 	);
+	//TODO: implement require and dirname
 	/* BEGIN WRAPPED GUN CODE */
-
 	__usable_globalThis.debug.warn(
 		"The methods `btoa` and `atob` are available in all modern environments, no need to polyfill them.",
 	);

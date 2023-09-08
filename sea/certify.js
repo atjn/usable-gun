@@ -24,8 +24,8 @@ export default function (__usable_environment) {
 			},
 		},
 	);
+	//TODO: implement require and dirname
 	/* BEGIN WRAPPED GUN CODE */
-
 	var SEA = rootPlugin(__usable_environment);
 	// This is to certify that a group of "certificants" can "put" anything at a group of matched "paths" to the certificate authority's graph
 	SEA.certify =

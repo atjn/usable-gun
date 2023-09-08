@@ -23,6 +23,8 @@ export default function (__usable_environment) {
 			},
 		},
 	);
+	//TODO: implement require and dirname
+
 	/* BEGIN WRAPPED GUN CODE */
 
 	// WARNING: GUN is very simple, but the JavaScript chaining API around GUN

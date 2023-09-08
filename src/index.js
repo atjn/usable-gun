@@ -8,8 +8,8 @@ const __usable_module = {};
 export default function (__usable_environment) {
 	if (__usable_isActivated) return __usable_module.exports;
 	__usable_isActivated = true;
+	//TODO: implement require and dirname
 	/* BEGIN WRAPPED GUN CODE */
-
 	var Gun = rootPlugin(__usable_environment);
 	chainPlugin(__usable_environment);
 	backPlugin(__usable_environment);

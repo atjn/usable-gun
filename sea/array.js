@@ -3,6 +3,8 @@ const __usable_module = {};
 export default function (__usable_environment) {
 	if (__usable_isActivated) return __usable_module.exports;
 	__usable_isActivated = true;
+	//TODO: implement require and dirname
+
 	/* BEGIN WRAPPED GUN CODE */ // This is Array extended to have .toString(['utf8'|'hex'|'base64'])
 	function SeaArray() {}
 	Object.assign(SeaArray, {

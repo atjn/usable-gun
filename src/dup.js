@@ -24,8 +24,8 @@ export default function (__usable_environment) {
 			},
 		},
 	);
+	//TODO: implement require and dirname
 	/* BEGIN WRAPPED GUN CODE */
-
 	shimPlugin(__usable_environment);
 	__usable_module.exports = (opt) => {
 		var dup = {
