@@ -67,7 +67,7 @@
         "strip-ansi": "^7.1.0",
         "tiny-glob": "^0.2.9"
     },
-    "dependencies": {
+    "optionalDependencies": {
         "aws-sdk": "*",
         "chokidar": "*",
         "emailjs": "*",
