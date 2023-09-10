@@ -10,9 +10,9 @@
 
 ## lib/aws.js
 
-  Wrapped globals          : module
+  Wrapped globals          : module, process x6
 
-  Wrapped global accessors : debug x3, process x6
+  Wrapped global accessors : debug x3
 
   Wrapped plugin imports   : gun
 
@@ -26,9 +26,7 @@
 
   Expanded names           : undefined x3
 
-  Wrapped globals          : window x2
-
-  Wrapped global accessors : process x2
+  Wrapped globals          : process x2, window x2
 
   Ignored global accessors : clearTimeout x2, setTimeout x10
 
@@ -76,7 +74,7 @@
 
 ## lib/crashed.js
 
-  Wrapped global accessors : __dirname, process x3
+  Wrapped globals          : __dirname, process x3
 
   Wrapped plugin imports   : email
 
@@ -96,9 +94,9 @@
 
 ## lib/debug.js
 
-  Wrapped globals          : global
+  Wrapped globals          : global, process x2
 
-  Wrapped global accessors : debug x3, process x2
+  Wrapped global accessors : debug x3
 
   Ignored global accessors : setInterval
 
@@ -126,9 +124,7 @@
 
 ## lib/email.js
 
-  Wrapped globals          : module x3
-
-  Wrapped global accessors : process x5
+  Wrapped globals          : module x3, process x5
 
   Upgraded npm imports     : emailjs
 
@@ -152,9 +148,9 @@
 
   Expanded names           : undefined
 
-  Wrapped globals          : window x2
+  Wrapped globals          : process x3, window x2
 
-  Wrapped global accessors : debug x5, process x3
+  Wrapped global accessors : debug x5
 
   Ignored global accessors : setInterval, setTimeout
 
@@ -206,9 +202,7 @@
 
 ## lib/fsrm.js
 
-  Wrapped globals          : module
-
-  Wrapped global accessors : __dirname
+  Wrapped globals          : __dirname, module
 
   Upgraded node imports    : fs, path
 
@@ -326,9 +320,9 @@
 
 ## lib/les.js
 
-  Wrapped globals          : window x3
+  Wrapped globals          : process x3, window x3
 
-  Wrapped global accessors : debug x7, process x3
+  Wrapped global accessors : debug x7
 
   Ignored global accessors : setInterval, setTimeout
 
@@ -512,11 +506,11 @@
 
   Expanded names           : undefined
 
-  Wrapped globals          : window x2
+  Wrapped globals          : process x2, window x2
 
   Wrapped global overrides : port
 
-  Wrapped global accessors : Buffer x2, debug, port x4, process x2
+  Wrapped global accessors : Buffer x2, debug, port x4
 
   Ignored global accessors : setInterval x2
 
@@ -614,9 +608,9 @@
 
   Expanded names           : undefined x31
 
-  Wrapped globals          : module, window x4
+  Wrapped globals          : module, require, window x4
 
-  Wrapped global accessors : debug x27, require, setImmediate x2
+  Wrapped global accessors : debug x27, setImmediate x2
 
   Ignored global accessors : setTimeout x4
 
@@ -652,9 +646,9 @@
 
   Expanded names           : setTimeout x12, undefined x2
 
-  Wrapped globals          : module
+  Wrapped globals          : module, process x2, require x2
 
-  Wrapped global accessors : debug x6, fetch x2, localStorage, process x2, require x2
+  Wrapped global accessors : debug x6, fetch x2, localStorage
 
   Ignored global accessors : setInterval, setTimeout x6
 
@@ -724,7 +718,9 @@
 
 ## lib/reboot.js
 
-  Wrapped global accessors : __dirname, debug x4
+  Wrapped globals          : __dirname
+
+  Wrapped global accessors : debug x4
 
   Upgraded node imports    : child_process
 
@@ -822,9 +818,9 @@
 
   Expanded names           : undefined x3
 
-  Wrapped globals          : module
+  Wrapped globals          : module, process x6
 
-  Wrapped global accessors : AWS_SDK_NOT_INSTALLED, debug x2, process x6
+  Wrapped global accessors : AWS_SDK_NOT_INSTALLED, debug x2
 
   Wrapped plugin imports   : gun, radisk, rfsmix
 
@@ -840,9 +836,9 @@
 
 ## lib/serve.js
 
-  Wrapped globals          : module
+  Wrapped globals          : __dirname x2, module
 
-  Wrapped global accessors : __dirname x2, debug x5
+  Wrapped global accessors : debug x5
 
   Upgraded node imports    : fs x2, path
 
@@ -890,11 +886,11 @@
 
 ## lib/stats.js
 
-  Wrapped globals          : window x2
+  Wrapped globals          : __dirname x2, process x11, require, window x2
 
-  Wrapped global overrides : debug x2, process x3
+  Wrapped global overrides : debug x2
 
-  Wrapped global accessors : __dirname x3, debug x6, process x8, require
+  Wrapped global accessors : __dirname, debug x6
 
   Ignored global accessors : setInterval, setTimeout x2
 
@@ -916,9 +912,9 @@
 
   Expanded names           : undefined x13
 
-  Wrapped globals          : window x2
+  Wrapped globals          : process x2, window x2
 
-  Wrapped global accessors : debug x11, process x2
+  Wrapped global accessors : debug x11
 
   Wrapped plugin imports   : gun, radisk
 
@@ -1122,7 +1118,9 @@
 
 ## lib/wsp.js
 
-  Wrapped global accessors : __dirname, debug
+  Wrapped globals          : __dirname
+
+  Wrapped global accessors : debug
 
   Ignored global accessors : clearTimeout x2, setTimeout x2
 
@@ -2010,13 +2008,13 @@
 
   Expanded names           : setTimeout x19, undefined x236
 
-  Wrapped globals          : global x7, module x39, MODULE x5, window x111
+  Wrapped globals          : __dirname x8, global x7, module x39, MODULE x5, process x47, require x4, window x111
 
   Removed global overrides : location.hash
 
-  Wrapped global overrides : $ x27, as, debug x5, JOY, meta x4, n2 x3, opt x2, pAdd, port, process x3, sAdd, soul, t2
+  Wrapped global overrides : $ x27, as, debug x5, JOY, meta x4, n2 x3, opt x2, pAdd, port, sAdd, soul, t2
 
-  Wrapped global accessors : __dirname x9, $ x151, AWS_SDK_NOT_INSTALLED, Buffer x4, cb, debug x145, echo, fetch x3, file, FileReader, fun x3, global x2, gun x11, Gun x8, Image, indexedDB x2, JOY x2, localStorage x2, meta x16, n2 x6, need, Node, obj_map, opt x4, port x4, process x44, Range, require x4, requireScriptPromises x3, setImmediate x4, soul x2, t2 x3, Tone x11, window x5
+  Wrapped global accessors : __dirname, $ x151, AWS_SDK_NOT_INSTALLED, Buffer x4, cb, debug x145, echo, fetch x3, file, FileReader, fun x3, global x2, gun x11, Gun x8, Image, indexedDB x2, JOY x2, localStorage x2, meta x16, n2 x6, need, Node, obj_map, opt x4, port x4, Range, requireScriptPromises x3, setImmediate x4, soul x2, t2 x3, Tone x11, window x5
 
   Ignored global accessors : clearTimeout x13, document x29, location x7, setInterval x8, setTimeout x74, TextDecoder x4, TextEncoder x4
 
@@ -2044,13 +2042,13 @@
 
   Expanded names           : _setImmediate x2, hasCallbackFunction x3, setTimeout x36, undefined x384
 
-  Wrapped globals          : global x7, MODULE x56, module x73, self x2, window x117
+  Wrapped globals          : __dirname x8, global x7, MODULE x56, module x73, process x47, require x4, self x2, window x117
 
   Removed global overrides : location.hash, location.protocol
 
-  Wrapped global overrides : $ x27, as, debug x6, JOY, meta x4, n2 x3, opt x2, pAdd, port, process x3, sAdd, soul, t2
+  Wrapped global overrides : $ x27, as, debug x6, JOY, meta x4, n2 x3, opt x2, pAdd, port, sAdd, soul, t2
 
-  Wrapped global accessors : __dirname x9, $ x151, authRecall, AWS_SDK_NOT_INSTALLED, Buffer x4, cb, debug x230, echo, fetch x3, file, FileReader, fun x3, global x2, gun x11, Gun x19, GUN x2, Image, indexedDB x2, JOY x2, localStorage x2, meta x16, n2 x6, need, Node, obj_map, opt x4, path, port x4, process x44, Range, require x4, requireScriptPromises x3, setImmediate x6, sha1hash, soul x2, t2 x3, theirPubkey, Tone x11, window x5
+  Wrapped global accessors : __dirname, $ x151, authRecall, AWS_SDK_NOT_INSTALLED, Buffer x4, cb, debug x230, echo, fetch x3, file, FileReader, fun x3, global x2, gun x11, Gun x19, GUN x2, Image, indexedDB x2, JOY x2, localStorage x2, meta x16, n2 x6, need, Node, obj_map, opt x4, path, port x4, Range, requireScriptPromises x3, setImmediate x6, sha1hash, soul x2, t2 x3, theirPubkey, Tone x11, window x5
 
   Ignored global accessors : atob, btoa x2, clearTimeout x19, document x31, location x11, MessageChannel x2, performance x2, setInterval x8, setTimeout x116, TextDecoder x8, TextEncoder x11
 

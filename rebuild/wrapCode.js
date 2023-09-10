@@ -112,6 +112,11 @@ const fileNeedsUsableModule = new Map();
 const fileNeedsUsableMODULE = new Map();
 const fileNeedsUsableGlobalThis = new Map();
 
+const fileNeedsUsableRequire = new Map();
+const fileNeedsUsableFilename = new Map();
+const fileNeedsUsableDirname = new Map();
+const fileNeedsUsableProcess = new Map();
+
 const fileIsAsync = new Map();
 const fileIsImportedBy = new Map();
 
@@ -881,6 +886,42 @@ function wrapGlobals({ types: t }){
 						);
 						fileNeedsUsableModule.set(filename, true);
 					}
+				}else if(name === "require"){
+					const memberExpression = path.findParent(path => path.isMemberExpression());
+					if (!memberExpression || memberExpression.get("object") === path){
+						updateMap(reports, filename, report => report.wrappedGlobals[name] = (report.wrappedGlobals[name] || 0) + 1);
+						path.replaceWith(
+							t.Identifier("__usable_require"),
+						);
+						fileNeedsUsableRequire.set(filename, true);
+					}
+				}else if(name === "__filename"){
+					const memberExpression = path.findParent(path => path.isMemberExpression());
+					if (!memberExpression || memberExpression.get("object") === path){
+						updateMap(reports, filename, report => report.wrappedGlobals[name] = (report.wrappedGlobals[name] || 0) + 1);
+						path.replaceWith(
+							t.Identifier("__usable_filename"),
+						);
+						fileNeedsUsableFilename.set(filename, true);
+					}
+				}else if(name === "__dirname"){
+					const memberExpression = path.findParent(path => path.isMemberExpression());
+					if (!memberExpression || memberExpression.get("object") === path){
+						updateMap(reports, filename, report => report.wrappedGlobals[name] = (report.wrappedGlobals[name] || 0) + 1);
+						path.replaceWith(
+							t.Identifier("__usable_dirname"),
+						);
+						fileNeedsUsableDirname.set(filename, true);
+					}
+				}else if(name === "process"){
+					const memberExpression = path.findParent(path => path.isMemberExpression());
+					if (!memberExpression || memberExpression.get("object") === path){
+						updateMap(reports, filename, report => report.wrappedGlobals[name] = (report.wrappedGlobals[name] || 0) + 1);
+						path.replaceWith(
+							t.Identifier("__usable_process"),
+						);
+						fileNeedsUsableProcess.set(filename, true);
+					}
 				}
 			},
 			
@@ -1192,6 +1233,14 @@ function removeUnusedWrapper(){
 						}else if(name === "__usable_module" && !fileNeedsUsableModule.has(filename)){
 							enclosingScope.remove();
 						}else if(name === "__usable_globalThis" && !fileNeedsUsableGlobalThis.has(filename)){
+							enclosingScope.remove();
+						}else if(name === "__usable_require" && !fileNeedsUsableRequire.has(filename)){
+							enclosingScope.remove();
+						}else if(name === "__usable_filename" && !fileNeedsUsableFilename.has(filename)){
+							enclosingScope.remove();
+						}else if(name === "__usable_dirname" && !fileNeedsUsableDirname.has(filename)){
+							enclosingScope.remove();
+						}else if(name === "__usable_process" && !fileNeedsUsableProcess.has(filename)){
 							enclosingScope.remove();
 						}
 					}
