@@ -154,6 +154,12 @@ function newReport(){
 	return report;
 }
 
+function removeUrlStuff(path){
+	if(path.startsWith("./")) path = path.slice(2);
+	if(path.startsWith(".")) path = path.slice(1);
+	return path;
+}
+
 console.log("Run string replacers, uprade requires, wrap globals, expand names");
 await Promise.all(paths.map(async path => {
 	const link = new Link(path);
@@ -166,7 +172,9 @@ await Promise.all(paths.map(async path => {
 	code = wrapperCode.replace("/* usable_insert_code */", code);
 	const exportMemberPaths = link.getRelativePath(rebuiltDir).replaceAll("-", "_").split(".")[0].split("/").map(p => p === "src" ? "gun" : p);
 	if (exportMemberPaths.length === 1) exportMemberPaths.unshift("default");
-	code = code.replaceAll("/* usable_insert_export_members */", `.${exportMemberPaths.join(".")}`);
+	code = code.replace("/* usable_insert_filename */", removeUrlStuff(`.${link.getRelativePath(rebuiltDir)}`));
+	code = code.replace("/* usable_insert_dirname */", removeUrlStuff(`.${pathJoin(link.getRelativePath(rebuiltDir), "..")}`));
+	code = code.replace("/* usable_insert_export_members */", `.${exportMemberPaths.join(".")}`);
 
 	let output;
 

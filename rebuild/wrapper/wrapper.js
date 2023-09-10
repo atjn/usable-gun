@@ -62,8 +62,8 @@ export default function (__usable_environment, __usable_MODULE){
 	const __usable_require = __usable_environment.environmentHint !== "server" ? undefined : () => {
 		throw new Error("It should not be possible to call this function, please open an issue in `usable-gun` to have this fixed.");
 	}
-	const __usable_filename = __usable_environment.environmentHint !== "server" ? undefined : decodeURI(new URL("", import.meta.url).pathname);
-	const __usable_dirname = __usable_environment.environmentHint !== "server" ? undefined : decodeURI(new URL(".", import.meta.url).pathname);
+	const __usable_filename = __usable_environment.environmentHint !== "server" ? undefined : "/* usable_insert_filename */";
+	const __usable_dirname = __usable_environment.environmentHint !== "server" ? undefined : "/* usable_insert_dirname */";
 
 	/* BEGIN WRAPPED GUN CODE */
 
