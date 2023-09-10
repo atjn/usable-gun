@@ -597,7 +597,7 @@ function upgradeRequires({ types: t }){
 								makePathAsync(path, t);
 								fileIsAsync.set(filename, true);
 							}else if(strategy[1] === "static"){
-								const importLocalName = `__import_${importName.replaceAll("-", "_").replaceAll(":", "_")}`;
+								const importLocalName = camelCaseString(`${importName.replaceAll("-", "_").replaceAll(":", "_")}_import`, "_");
 								path.replaceWith(
 									t.Identifier(importLocalName),
 								);
@@ -951,7 +951,7 @@ function wrapGlobalOverrides({ types: t }){
 				baseObjectScope.unshift(baseObject.node.name);
 				const scopeString = baseObjectScope.join("|");
 				const name = baseObject.node.name;
-				if(!baseObject.isIdentifier() || name.startsWith("__usable_") || name.startsWith("__import_") || name.endsWith("Plugin") || builtins.includes(name) || path.scope.hasBinding(name)) return;
+				if(!baseObject.isIdentifier() || name.startsWith("__usable_") || name.endsWith("Import") || name.endsWith("Plugin") || builtins.includes(name) || path.scope.hasBinding(name)) return;
 				/**
 				 * Gun should let the developer decide when their application wants to update its URL.
 				 * We remove all instances that set anything on location.
@@ -986,7 +986,7 @@ function wrapGlobalAccessors({ types: t }){
 			Identifier(path, { filename }){
 				const fileTop = topIndex.get(filename);
 				const name = path.node.name;
-				if(name.startsWith("__usable_") || name.startsWith("__import_") || name.endsWith("Plugin") || path.node.loc?.start?.line <= fileTop || path.scope.hasBinding(name)){
+				if(name.startsWith("__usable_") || name.endsWith("Import") || name.endsWith("Plugin") || path.node.loc?.start?.line <= fileTop || path.scope.hasBinding(name)){
 					return;
 				}
 				if(safeGlobalEntries.includes(name)){
