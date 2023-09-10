@@ -33,11 +33,12 @@ export default [
 	[`import Buffer from "buffer"`, `let Buffer = require("node:buffer")`, "downgrade buffer import"],
 
 	/**
-	 * Most of SEA becomes async because of this import that tries to polyfill something that is available in all modern environments
+	 * Most of SEA becomes async because of this import that tries to polyfill something that is available in all modern environments.
+	 * Easier to just remove it.
 	 */
-	[/require\s*\(\s*['"](?:node:)?crypto['"].*?\)/sgu, "crypto", "b"],
-	[/require\s*\(\s*['"]@peculiar\/webcrypto['"].*?\)/sgu, "undefined", "k"],
-	[/\.log\s*\(\s*['"]Please `npm install @peculiar\/webcrypto` or add it to your package.json !['"]\s*\)/sgu, `.error("Please use an environment that supports the crypto API")`, "s"],
+	[/require\s*\(\s*['"](?:node:)?crypto['"].*?\)/sgu, "crypto", "remove node crypto import"],
+	[/require\s*\(\s*['"]@peculiar\/webcrypto['"].*?\)/sgu, "undefined", "remove npm crypto import"],
+	[/\.log\s*\(\s*['"]Please `npm install @peculiar\/webcrypto` or add it to your package.json !['"]\s*\)/sgu, `.error("Please use an environment that supports the crypto API")`, "correct crypto import warning"],
 
 	/**
 	 * SEA thinks it can redirect the user automatically, but this is bad practice and is stripped from usable-gun.

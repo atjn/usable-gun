@@ -1456,7 +1456,7 @@
 
 ## sea/shim.js
 
-  Used string replacers    : b, k, remove undefined generator hack (variant 2), remove USE bundler test, s
+  Used string replacers    : correct crypto import warning, remove node crypto import, remove npm crypto import, remove undefined generator hack (variant 2), remove USE bundler test
 
   Expanded names           : undefined x5
 
@@ -1978,7 +1978,7 @@
 
 ## In total for sea
 
-  Used string replacers    : b, correct SEA HTTPS warning, k, remove undefined generator hack (variant 1) x2, remove undefined generator hack (variant 2) x3, remove USE bundler test x4, s
+  Used string replacers    : correct crypto import warning, correct SEA HTTPS warning, remove node crypto import, remove npm crypto import, remove undefined generator hack (variant 1) x2, remove undefined generator hack (variant 2) x3, remove USE bundler test x4
 
   Expanded names           : undefined x33
 
@@ -2038,7 +2038,7 @@
 
 ## In total
 
-  Used string replacers    : b, correct SEA HTTPS warning, downgrade buffer import, k, remove if statement syntax error, remove text-encoder import, remove undefined generator hack (variant 1) x11, remove undefined generator hack (variant 2) x4, remove USE bundler test x4, remove welcome log, s
+  Used string replacers    : correct crypto import warning, correct SEA HTTPS warning, downgrade buffer import, remove if statement syntax error, remove node crypto import, remove npm crypto import, remove text-encoder import, remove undefined generator hack (variant 1) x11, remove undefined generator hack (variant 2) x4, remove USE bundler test x4, remove welcome log
 
   Expanded names           : _setImmediate x2, hasCallbackFunction x3, setTimeout x36, undefined x384
 

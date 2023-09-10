@@ -48,12 +48,12 @@ const nodePackages = ["fs", "os", "v8", "path", "url", "crypto", "events", "proc
  * ## static
  * In this case, we make static imports.
  * Pro: The code will work sunchronously like it did before, which saves us a lot of headaches.
- * Con: The code will not work outside of environments with full node and npm support. (fx. the web)
+ * Con: The code will not work outside of environments with full node and npm support. (fx. browsers)
  * 
  * ## dynamic
  * In this case, we make dynamic imports and await them. This means the plugin becomes async.
- * Pro: Some code can run in web environments because it  TODO
- * Con: It is very hard to transform all code TODO
+ * Pro: Some code can run in web environments because it only runs the imports in a server environment.
+ * Con: It is very hard to transform code to be asynchronous when it is expecting to be synchronous. We can easily have bugs or have to make very complicated transforms.
  */
 const externalImportStrategy = [
 	["lib/aws.js",			"static"],
