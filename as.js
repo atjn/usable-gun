@@ -42,9 +42,9 @@ export default function (__usable_environment) {
 						return true;
 					},
 			  });
-	//TODO: implement require and dirname
 
 	/* BEGIN WRAPPED GUN CODE */
+
 	(() => {
 		function as(el, gun, cb, opt) {
 			el = __usable_globalThis.$(el);

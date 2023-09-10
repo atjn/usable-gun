@@ -6,8 +6,8 @@ export default function (__usable_environment) {
 	if (__usable_isActivated) return __usable_module.exports;
 	__usable_isActivated = true;
 
-	//TODO: implement require and dirname
 	/* BEGIN WRAPPED GUN CODE */
+
 	var SEA = seaPlugin(__usable_environment);
 
 	var Gun;

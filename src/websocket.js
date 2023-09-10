@@ -4,8 +4,8 @@ let __usable_isActivated = false;
 export default function (__usable_environment) {
 	if (__usable_isActivated) return;
 	__usable_isActivated = true;
-	//TODO: implement require and dirname
 	/* BEGIN WRAPPED GUN CODE */
+
 	var Gun = indexPlugin(__usable_environment);
 	Gun.Mesh = meshPlugin(__usable_environment);
 

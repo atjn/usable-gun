@@ -23,8 +23,8 @@ export default function (__usable_environment) {
 			},
 		},
 	);
-	//TODO: implement require and dirname
 	/* BEGIN WRAPPED GUN CODE */
+
 	var Gun = indexPlugin(__usable_environment);
 	Gun.chain.on = function (tag, arg, eas, as) {
 		// don't rewrite!

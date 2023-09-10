@@ -23,8 +23,8 @@ export default function (__usable_environment) {
 			},
 		},
 	);
-	//TODO: implement require and dirname
 	/* BEGIN WRAPPED GUN CODE */
+
 	var Gun =
 		"undefined" != typeof __usable_globalThis.GUN
 			? __usable_globalThis.GUN || {

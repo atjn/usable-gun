@@ -6,8 +6,8 @@ const __usable_module = {};
 export default function (__usable_environment) {
 	if (__usable_isActivated) return __usable_module.exports;
 	__usable_isActivated = true;
-	//TODO: implement require and dirname
 	/* BEGIN WRAPPED GUN CODE */
+
 	var shim = shimPlugin(__usable_environment);
 	var S = settingsPlugin(__usable_environment);
 	var sha256hash = sha256Plugin(__usable_environment);

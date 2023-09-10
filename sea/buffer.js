@@ -24,9 +24,8 @@ export default function (__usable_environment) {
 			},
 		},
 	);
-	//TODO: implement require and dirname
-
 	/* BEGIN WRAPPED GUN CODE */
+
 	// This is Buffer implementation used in SEA. Functionality is mostly
 	// compatible with NodeJS 'safe-buffer' and is used for encoding conversions
 	// between binary and 'hex' | 'utf8' | 'base64'

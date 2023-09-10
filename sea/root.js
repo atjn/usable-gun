@@ -43,7 +43,6 @@ export default function (__usable_environment, __usable_MODULE) {
 						return true;
 					},
 			  });
-	//TODO: implement require and dirname
 
 	/* BEGIN WRAPPED GUN CODE */
 

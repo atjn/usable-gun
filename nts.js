@@ -43,9 +43,9 @@ export default function (__usable_environment) {
 						return true;
 					},
 			  });
-	//TODO: implement require and dirname
 
 	/* BEGIN WRAPPED GUN CODE */
+
 	(() => {
 		var Gun =
 			typeof __usable_window !== "undefined"

@@ -23,8 +23,6 @@ export default function (__usable_environment) {
 			},
 		},
 	);
-	//TODO: implement require and dirname
-
 	/* BEGIN WRAPPED GUN CODE */ // Shim for generic javascript utilities.
 	mathRandomPlugin(__usable_environment);
 	__usable_globalThis.stringRandom = (l, c) => {

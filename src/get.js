@@ -23,8 +23,8 @@ export default function (__usable_environment) {
 			},
 		},
 	);
-	//TODO: implement require and dirname
 	/* BEGIN WRAPPED GUN CODE */
+
 	var Gun = rootPlugin(__usable_environment);
 	Gun.chain.get = function (key, cb, as) {
 		var gun;

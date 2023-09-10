@@ -3,8 +3,6 @@ const __usable_module = {};
 export default function (__usable_environment) {
 	if (__usable_isActivated) return __usable_module.exports;
 	__usable_isActivated = true;
-	//TODO: implement require and dirname
-
 	/* BEGIN WRAPPED GUN CODE */ // On event emitter generic javascript utility.
 	__usable_module.exports = function onto(tag, arg, as) {
 		if (!tag) {

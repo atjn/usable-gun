@@ -25,8 +25,8 @@ export default function (__usable_environment) {
 			},
 		},
 	);
-	//TODO: implement require and dirname
 	/* BEGIN WRAPPED GUN CODE */
+
 	const SEA = rootPlugin(__usable_environment);
 	const api = {
 		Buffer: bufferPlugin(__usable_environment),

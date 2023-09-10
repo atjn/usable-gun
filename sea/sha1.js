@@ -4,8 +4,6 @@ const __usable_module = {};
 export default function (__usable_environment) {
 	if (__usable_isActivated) return __usable_module.exports;
 	__usable_isActivated = true;
-	//TODO: implement require and dirname
-
 	/* BEGIN WRAPPED GUN CODE */ // This internal func returns SHA-1 hashed data for KeyID generation
 	const __shim = shimPlugin(__usable_environment);
 	const subtle = __shim.subtle;

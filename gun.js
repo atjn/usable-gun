@@ -42,7 +42,6 @@ export default function (__usable_environment) {
 			},
 		},
 	);
-	//TODO: implement require and dirname
 	/* BEGIN WRAPPED GUN CODE */
 	mathRandomPlugin(__usable_environment);
 	(() => {

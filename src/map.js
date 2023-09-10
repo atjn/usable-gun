@@ -24,8 +24,8 @@ export default function (__usable_environment) {
 		},
 	);
 
-	//TODO: implement require and dirname
 	/* BEGIN WRAPPED GUN CODE */
+
 	var Gun = indexPlugin(__usable_environment);
 
 	var next = Gun.chain.get.next;

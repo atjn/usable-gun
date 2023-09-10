@@ -27,8 +27,8 @@ export default function (__usable_environment) {
 			},
 		},
 	);
-	//TODO: implement require and dirname
 	/* BEGIN WRAPPED GUN CODE */
+
 	var SEA = rootPlugin(__usable_environment);
 	var shim = shimPlugin(__usable_environment);
 	settingsPlugin(__usable_environment);
