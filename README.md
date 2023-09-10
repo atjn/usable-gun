@@ -124,7 +124,7 @@ You can port it like so:
 
 ```js
 import { GunEnvironment } from "usable-gun";
-import { defaultBrowserPlugin } from "usable-gun"; // Equivalent to importing "gun"
+import { defaultBrowserPlugin } from "usable-gun"; // Equivalent to importing "gun" in a browser
 import seaPlugin from "usable-gun/sea";
 import radixPlugin from "usable-gun/lib/radix.js";
 
@@ -146,13 +146,35 @@ gun // Your Gun instance
 SEA // Your SEA library
 ```
 
-If you are using Gun on the server, you can replace `defaultBrowserPlugin` with `defaultServerPlugin` and set `environmentHint` to `server`. You can also load Gun in a few other ways, see the [API reference](./docs/api.md) for more details.
+Or if you want to run it on the server side, you can write:
+
+```js
+import { GunEnvironment } from "usable-gun";
+import serverPlugin from "usable-gun/lib/server.js"; // Equivalent to importing "gun" in a nodejs process
+
+const gunEnvironment = new GunEnvironment({
+  environmentHint: "server",
+});
+await gunEnvironment.usePlugins([
+  serverPlugin,
+]);
+
+const gun = new gunEnvironment.exports.lib.server({
+  peers: [],
+});
+const SEA = gunEnvironment.exports.sea;
+
+gun // Your Gun instance
+SEA // Your SEA library
+```
+
+You can also load Gun in a few other ways, see the [API reference](./docs/api.md) for more details.
 
 # How it works
 
 If you import the original Gun code, it will immediately execute and attach itself to your `window` property. This is bad practice.
 
-`usable-gun`'s `GunEnvironment` is a sandbox that emulates a browser context with the `window` property. All Gun code is wrapped into plugins that can be executed inside the sandbox. Anything that Gun used to set on the `window` property is now set on `GunEnvironment.library`. This technique also works for server-side code.
+`usable-gun`'s `GunEnvironment` is a sandbox that emulates a browser context with the `window` property. All Gun code is wrapped into plugins that can be executed inside the sandbox. Anything that Gun used to set on the `window` property is now set on `GunEnvironment.library`. Server-side code works slightly differently, it will export values instead, and they can be found on `GunEnvironment.exports`.
 
 Original gun code also mutated common properties such as `String` and `setTimeout`. These mutations are also available as properties on `GunEnvironment.library`.
 

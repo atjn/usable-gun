@@ -15,7 +15,7 @@ import {
 	defaultSeaPlugin,
 	defaultAxePlugin,
 	defaultBrowserPlugin,
-	defaultServerPlugin,
+	// see `lib/server.js` for the default server plugin
 
   // Pre-made debuggers
 	NoDebugger,
@@ -318,8 +318,10 @@ This plugin activates the plugins that the original Gun library would activate w
 
 </details>
 
-## `defaultServerPlugin`
+## `lib/server.js` default export
 This plugin activates the plugins that the original Gun library would activate when `gun` is imported in a Node process.
+
+It is not exported as part of the standard package, as it imports a lot of node-specific code that can break many other runtimes. It can instead be imported with `import serverPlugin from "usable-gun/lib/server.js"`.
 
 <details>
 <summary>It activates the following plugins (click to expand)</summary>

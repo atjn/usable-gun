@@ -7,7 +7,6 @@ import {
 	defaultSeaPlugin,
 	defaultAxePlugin,
 	defaultBrowserPlugin,
-	defaultServerPlugin,
 	
 	NoDebugger,
 	ConsoleDebugger,
@@ -23,7 +22,6 @@ export {
 	defaultSeaPlugin,
 	defaultAxePlugin,
 	defaultBrowserPlugin,
-	defaultServerPlugin,
 	
 	NoDebugger,
 	ConsoleDebugger,
