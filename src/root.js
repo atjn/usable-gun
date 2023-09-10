@@ -49,7 +49,6 @@ export default function (__usable_environment, __usable_MODULE) {
 						return true;
 					},
 			  });
-
 	/* BEGIN WRAPPED GUN CODE */
 
 	function Gun(o) {

@@ -43,14 +43,12 @@ export default function (__usable_environment, __usable_MODULE) {
 						return true;
 					},
 			  });
-
 	/* BEGIN WRAPPED GUN CODE */
 
 	// Security, Encryption, and Authorization: SEA.js
 	// MANDATORY READING: https://gun.eco/explainers/data/security.html
 	// IT IS IMPLEMENTED IN A POLYFILL/SHIM APPROACH.
 	// THIS IS AN EARLY ALPHA!
-
 	if (typeof __usable_globalThis !== "undefined") {
 		__usable_module.window = __usable_globalThis;
 	} // should be safe for at least browser/worker/nodejs, need to check other envs like RN etc.

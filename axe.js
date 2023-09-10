@@ -46,7 +46,6 @@ export default function (__usable_environment) {
 						return true;
 					},
 			  });
-
 	/* BEGIN WRAPPED GUN CODE */
 	mathRandomPlugin(__usable_environment);
 	(() => {
