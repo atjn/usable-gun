@@ -212,9 +212,9 @@
 
 ## lib/fun.js
 
-  Wrapped globals          : window
+  Wrapped globals          : window x3
 
-  Wrapped global accessors : $ x4, fun x3, window x2
+  Wrapped global accessors : $ x4, fun x3
 
   Ignored global accessors : document, setTimeout x2
 
@@ -764,9 +764,9 @@
 
   Expanded names           : undefined x2
 
-  Wrapped globals          : module, window x2
+  Wrapped globals          : module, window x3
 
-  Wrapped global accessors : debug x3, indexedDB x2, window
+  Wrapped global accessors : debug x3, indexedDB x2
 
   Ignored global accessors : location, setInterval, setTimeout x4
 
@@ -778,9 +778,9 @@
 
 ## lib/rls.js
 
-  Wrapped globals          : module, window
+  Wrapped globals          : module, window x2
 
-  Wrapped global accessors : localStorage, window
+  Wrapped global accessors : localStorage
 
   Wrapped plugin imports   : gun
 
@@ -886,11 +886,11 @@
 
 ## lib/stats.js
 
-  Wrapped globals          : __dirname x2, process x11, require, window x2
+  Wrapped globals          : __dirname x3, process x11, require, window x2
 
   Wrapped global overrides : debug x2
 
-  Wrapped global accessors : __dirname, debug x6
+  Wrapped global accessors : debug x6
 
   Ignored global accessors : setInterval, setTimeout x2
 
@@ -1058,7 +1058,9 @@
 
 ## lib/wave.js
 
-  Wrapped global accessors : debug x2, global x2, requireScriptPromises x3, Tone x11, window
+  Wrapped globals          : global x2, window
+
+  Wrapped global accessors : debug x2, requireScriptPromises x3, Tone x11
 
   Ignored global accessors : clearTimeout, document x4, setTimeout x5
 
@@ -2008,13 +2010,13 @@
 
   Expanded names           : setTimeout x19, undefined x236
 
-  Wrapped globals          : __dirname x8, global x7, module x39, MODULE x5, process x47, require x4, window x111
+  Wrapped globals          : __dirname x9, global x9, module x39, MODULE x5, process x47, require x4, window x116
 
   Removed global overrides : location.hash
 
   Wrapped global overrides : $ x27, as, debug x5, JOY, meta x4, n2 x3, opt x2, pAdd, port, sAdd, soul, t2
 
-  Wrapped global accessors : __dirname, $ x151, AWS_SDK_NOT_INSTALLED, Buffer x4, cb, debug x145, echo, fetch x3, file, FileReader, fun x3, global x2, gun x11, Gun x8, Image, indexedDB x2, JOY x2, localStorage x2, meta x16, n2 x6, need, Node, obj_map, opt x4, port x4, Range, requireScriptPromises x3, setImmediate x4, soul x2, t2 x3, Tone x11, window x5
+  Wrapped global accessors : $ x151, AWS_SDK_NOT_INSTALLED, Buffer x4, cb, debug x145, echo, fetch x3, file, FileReader, fun x3, gun x11, Gun x8, Image, indexedDB x2, JOY x2, localStorage x2, meta x16, n2 x6, need, Node, obj_map, opt x4, port x4, Range, requireScriptPromises x3, setImmediate x4, soul x2, t2 x3, Tone x11
 
   Ignored global accessors : clearTimeout x13, document x29, location x7, setInterval x8, setTimeout x74, TextDecoder x4, TextEncoder x4
 
@@ -2042,13 +2044,13 @@
 
   Expanded names           : _setImmediate x2, hasCallbackFunction x3, setTimeout x36, undefined x384
 
-  Wrapped globals          : __dirname x8, global x7, MODULE x56, module x73, process x47, require x4, self x2, window x117
+  Wrapped globals          : __dirname x9, global x9, MODULE x56, module x73, process x47, require x4, self x2, window x122
 
   Removed global overrides : location.hash, location.protocol
 
   Wrapped global overrides : $ x27, as, debug x6, JOY, meta x4, n2 x3, opt x2, pAdd, port, sAdd, soul, t2
 
-  Wrapped global accessors : __dirname, $ x151, authRecall, AWS_SDK_NOT_INSTALLED, Buffer x4, cb, debug x230, echo, fetch x3, file, FileReader, fun x3, global x2, gun x11, Gun x19, GUN x2, Image, indexedDB x2, JOY x2, localStorage x2, meta x16, n2 x6, need, Node, obj_map, opt x4, path, port x4, Range, requireScriptPromises x3, setImmediate x6, sha1hash, soul x2, t2 x3, theirPubkey, Tone x11, window x5
+  Wrapped global accessors : $ x151, authRecall, AWS_SDK_NOT_INSTALLED, Buffer x4, cb, debug x230, echo, fetch x3, file, FileReader, fun x3, gun x11, Gun x19, GUN x2, Image, indexedDB x2, JOY x2, localStorage x2, meta x16, n2 x6, need, Node, obj_map, opt x4, path, port x4, Range, requireScriptPromises x3, setImmediate x6, sha1hash, soul x2, t2 x3, theirPubkey, Tone x11
 
   Ignored global accessors : atob, btoa x2, clearTimeout x19, document x31, location x11, MessageChannel x2, performance x2, setInterval x8, setTimeout x116, TextDecoder x8, TextEncoder x11
 

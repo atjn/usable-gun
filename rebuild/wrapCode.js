@@ -851,7 +851,7 @@ function wrapGlobals({ types: t }){
 				if(name.startsWith("__usable_") || name.endsWith("Plugin") || path.node.loc.start.line <= fileTop){
 					return;
 				}else if(name === "window"){
-					const memberExpression = path.findParent(path => path.isMemberExpression());
+					const memberExpression = isPartOfMemberExpression(path);
 					if (!memberExpression || memberExpression.get("object") === path){
 						updateMap(reports, filename, report => report.wrappedGlobals[name] = (report.wrappedGlobals[name] || 0) + 1);
 						path.replaceWith(
@@ -860,7 +860,7 @@ function wrapGlobals({ types: t }){
 						fileNeedsUsableWindow.set(filename, true);
 					}
 				}else if(name === "self" || name === "global" || name === "globalThis"){
-					const memberExpression = path.findParent(path => path.isMemberExpression());
+					const memberExpression = isPartOfMemberExpression(path);
 					if (!memberExpression || memberExpression.get("object") === path){
 						updateMap(reports, filename, report => report.wrappedGlobals[name] = (report.wrappedGlobals[name] || 0) + 1);
 						path.replaceWith(
@@ -869,7 +869,7 @@ function wrapGlobals({ types: t }){
 						fileNeedsUsableGlobalThis.set(filename, true);
 					}
 				}else if(name === "MODULE"){
-					const memberExpression = path.findParent(path => path.isMemberExpression());
+					const memberExpression = isPartOfMemberExpression(path);
 					if (!memberExpression || memberExpression.get("object") === path){
 						updateMap(reports, filename, report => report.wrappedGlobals[name] = (report.wrappedGlobals[name] || 0) + 1);
 						path.replaceWith(
@@ -878,7 +878,7 @@ function wrapGlobals({ types: t }){
 						fileNeedsUsableMODULE.set(filename, true);
 					}
 				}else if(name === "module"){
-					const memberExpression = path.findParent(path => path.isMemberExpression());
+					const memberExpression = isPartOfMemberExpression(path);
 					if (!memberExpression || memberExpression.get("object") === path){
 						updateMap(reports, filename, report => report.wrappedGlobals[name] = (report.wrappedGlobals[name] || 0) + 1);
 						path.replaceWith(
@@ -887,7 +887,7 @@ function wrapGlobals({ types: t }){
 						fileNeedsUsableModule.set(filename, true);
 					}
 				}else if(name === "require"){
-					const memberExpression = path.findParent(path => path.isMemberExpression());
+					const memberExpression = isPartOfMemberExpression(path);
 					if (!memberExpression || memberExpression.get("object") === path){
 						updateMap(reports, filename, report => report.wrappedGlobals[name] = (report.wrappedGlobals[name] || 0) + 1);
 						path.replaceWith(
@@ -896,7 +896,7 @@ function wrapGlobals({ types: t }){
 						fileNeedsUsableRequire.set(filename, true);
 					}
 				}else if(name === "__filename"){
-					const memberExpression = path.findParent(path => path.isMemberExpression());
+					const memberExpression = isPartOfMemberExpression(path);
 					if (!memberExpression || memberExpression.get("object") === path){
 						updateMap(reports, filename, report => report.wrappedGlobals[name] = (report.wrappedGlobals[name] || 0) + 1);
 						path.replaceWith(
@@ -905,7 +905,7 @@ function wrapGlobals({ types: t }){
 						fileNeedsUsableFilename.set(filename, true);
 					}
 				}else if(name === "__dirname"){
-					const memberExpression = path.findParent(path => path.isMemberExpression());
+					const memberExpression = isPartOfMemberExpression(path);
 					if (!memberExpression || memberExpression.get("object") === path){
 						updateMap(reports, filename, report => report.wrappedGlobals[name] = (report.wrappedGlobals[name] || 0) + 1);
 						path.replaceWith(
@@ -914,7 +914,7 @@ function wrapGlobals({ types: t }){
 						fileNeedsUsableDirname.set(filename, true);
 					}
 				}else if(name === "process"){
-					const memberExpression = path.findParent(path => path.isMemberExpression());
+					const memberExpression = isPartOfMemberExpression(path);
 					if (!memberExpression || memberExpression.get("object") === path){
 						updateMap(reports, filename, report => report.wrappedGlobals[name] = (report.wrappedGlobals[name] || 0) + 1);
 						path.replaceWith(
@@ -1128,6 +1128,18 @@ function wrapBuiltinAccessors({ types: t }){
 	};
 }
 
+function isPartOfMemberExpression(path){
+	while(path){
+		if(path.isMemberExpression()){
+			return path;
+		}
+		if(path.isCallExpression() || path.isBlockStatement() || path.isReturnStatement() || path.isAssignmentExpression()){
+			return null;
+		}
+		path = path.parentPath;
+	}
+	return null;
+}
 
 /**
  *
