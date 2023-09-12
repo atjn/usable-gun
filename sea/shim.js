@@ -93,10 +93,10 @@ export default function (__usable_environment) {
 	}
 	if (!api.crypto) {
 		try {
-			var crypto = crypto;
 			Object.assign(api, {
-				crypto,
-				random: (len) => api.Buffer.from(crypto.randomBytes(len)),
+				crypto: __usable_globalThis.crypto,
+				random: (len) =>
+					api.Buffer.from(__usable_globalThis.crypto.randomBytes(len)),
 			});
 			const { Crypto: WebCrypto } = undefined;
 			api.ossl = api.subtle = new WebCrypto({

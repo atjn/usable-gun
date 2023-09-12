@@ -39,6 +39,7 @@ export default [
 	[/require\s*\(\s*['"](?:node:)?crypto['"].*?\)/sgu, "crypto", "remove node crypto import"],
 	[/require\s*\(\s*['"]@peculiar\/webcrypto['"].*?\)/sgu, "undefined", "remove npm crypto import"],
 	[/\.log\s*\(\s*['"]Please `npm install @peculiar\/webcrypto` or add it to your package.json !['"]\s*\)/sgu, `.error("Please use an environment that supports the crypto API")`, "correct crypto import warning"],
+	[/var\s+crypto\s*=\s*crypto/sgu, "", "remove dangerous crypto overrider"],
 
 	/**
 	 * SEA thinks it can redirect the user automatically, but this is bad practice and is stripped from usable-gun.

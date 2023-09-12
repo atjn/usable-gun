@@ -1458,13 +1458,13 @@
 
 ## sea/shim.js
 
-  Used string replacers    : correct crypto import warning, remove node crypto import, remove npm crypto import, remove undefined generator hack (variant 2), remove USE bundler test
+  Used string replacers    : correct crypto import warning, remove dangerous crypto overrider, remove node crypto import, remove npm crypto import, remove undefined generator hack (variant 2), remove USE bundler test
 
   Expanded names           : undefined x5
 
   Wrapped globals          : module
 
-  Wrapped global accessors : debug
+  Wrapped global accessors : crypto x2, debug
 
   Ignored global accessors : TextDecoder x3, TextEncoder x2
 
@@ -1980,7 +1980,7 @@
 
 ## In total for sea
 
-  Used string replacers    : correct crypto import warning, correct SEA HTTPS warning, remove node crypto import, remove npm crypto import, remove undefined generator hack (variant 1) x2, remove undefined generator hack (variant 2) x3, remove USE bundler test x4
+  Used string replacers    : correct crypto import warning, correct SEA HTTPS warning, remove dangerous crypto overrider, remove node crypto import, remove npm crypto import, remove undefined generator hack (variant 1) x2, remove undefined generator hack (variant 2) x3, remove USE bundler test x4
 
   Expanded names           : undefined x33
 
@@ -1988,7 +1988,7 @@
 
   Removed global overrides : location.protocol
 
-  Wrapped global accessors : authRecall, debug x38, GUN x2, path, sha1hash, theirPubkey
+  Wrapped global accessors : authRecall, crypto x2, debug x38, GUN x2, path, sha1hash, theirPubkey
 
   Ignored global accessors : atob, btoa x2, location x4, setTimeout, TextDecoder x4, TextEncoder x7
 
@@ -2040,7 +2040,7 @@
 
 ## In total
 
-  Used string replacers    : correct crypto import warning, correct SEA HTTPS warning, downgrade buffer import, remove if statement syntax error, remove node crypto import, remove npm crypto import, remove text-encoder import, remove undefined generator hack (variant 1) x11, remove undefined generator hack (variant 2) x4, remove USE bundler test x4, remove welcome log
+  Used string replacers    : correct crypto import warning, correct SEA HTTPS warning, downgrade buffer import, remove dangerous crypto overrider, remove if statement syntax error, remove node crypto import, remove npm crypto import, remove text-encoder import, remove undefined generator hack (variant 1) x11, remove undefined generator hack (variant 2) x4, remove USE bundler test x4, remove welcome log
 
   Expanded names           : _setImmediate x2, hasCallbackFunction x3, setTimeout x36, undefined x384
 
@@ -2050,7 +2050,7 @@
 
   Wrapped global overrides : $ x27, as, debug x6, JOY, meta x4, n2 x3, opt x2, pAdd, port, sAdd, soul, t2
 
-  Wrapped global accessors : $ x151, authRecall, AWS_SDK_NOT_INSTALLED, Buffer x4, cb, debug x230, echo, fetch x3, file, FileReader, fun x3, gun x11, Gun x19, GUN x2, Image, indexedDB x2, JOY x2, localStorage x2, meta x16, n2 x6, need, Node, obj_map, opt x4, path, port x4, Range, requireScriptPromises x3, setImmediate x6, sha1hash, soul x2, t2 x3, theirPubkey, Tone x11
+  Wrapped global accessors : $ x151, authRecall, AWS_SDK_NOT_INSTALLED, Buffer x4, cb, crypto x2, debug x230, echo, fetch x3, file, FileReader, fun x3, gun x11, Gun x19, GUN x2, Image, indexedDB x2, JOY x2, localStorage x2, meta x16, n2 x6, need, Node, obj_map, opt x4, path, port x4, Range, requireScriptPromises x3, setImmediate x6, sha1hash, soul x2, t2 x3, theirPubkey, Tone x11
 
   Ignored global accessors : atob, btoa x2, clearTimeout x19, document x31, location x11, MessageChannel x2, performance x2, setInterval x8, setTimeout x116, TextDecoder x8, TextEncoder x11
 
