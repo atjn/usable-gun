@@ -1,3 +1,7 @@
+# v0.202002.123901
+
+Fixed a bug where SEA would break on initialization.
+
 # v0.202002.123900
 
 Made a lot of changes to the way the package imports dependencies. It should be much easier to use both for server and browser code now.

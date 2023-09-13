@@ -4,5 +4,5 @@
 
 export default {
 	major: 2,
-	minor: 0,
+	minor: 1,
 };
